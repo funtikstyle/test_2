@@ -18,7 +18,6 @@ type User struct {
 }
 
 var m = make(map[string]User)
-
 var inc = 1
 
 func main() {
@@ -106,7 +105,6 @@ func deleteUser(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	if ok {
 		delete(m, ps.ByName("id"))
 		fmt.Fprintf(w, "Контакт удален.")
-
 	} else {
 		fmt.Fprintf(w, "Kонтакт не найден")
 	}
