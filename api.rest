@@ -1,0 +1,19 @@
+GET http://localhost:8081/user/2
+
+###
+DELETE http://localhost:8081/user/2
+
+###
+GET http://localhost:8081/users/list/
+
+###
+
+POST http://localhost:8081/user/
+Content-Type: application/json
+
+{
+  "name": "Vasya222222",
+  "phone": "123456722222"
+}
+
+###
