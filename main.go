@@ -22,16 +22,16 @@ var m = make(map[string]User)
 var inc = 1
 
 func main() {
-
 	router := httprouter.New()
+
 	router.GET("/user/:id", getUser)
 	router.GET("/users/list/", getUserList)
 	router.POST("/user/", addUser)
 	router.PUT("/user/:id", updateUser)
 	router.DELETE("/user/:id", deleteUser)
-	fmt.Println("")
-	log.Fatal(http.ListenAndServe(":8081", router))
 
+	fmt.Println("Start server")
+	log.Fatal(http.ListenAndServe(":8081", router))
 }
 func addUser(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	user := User{}
