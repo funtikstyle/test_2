@@ -40,6 +40,7 @@ func addUser(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		log.Println(err.Error())
 		return
 	}
+
 	_, ok := m[strconv.Itoa(inc)]
 	if ok {
 		for i := 0; i < 10; i++ {
@@ -53,6 +54,7 @@ func addUser(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 			fmt.Fprintf(w, "Не удалось добавить контакт , мы сделали все что могли!!!")
 		}
 	}
+
 	if !ok {
 		m[strconv.Itoa(inc)] = user
 		fmt.Fprintf(w, "Контакт добюавлен.")
