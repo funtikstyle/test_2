@@ -10,7 +10,7 @@ type Contact struct {
 }
 type PhoneBook map[string]Contact
 
-var ai = 0
+var AI = 0
 
 func (pb *PhoneBook) FindById(key string) bool {
 	_, ok := (*pb)[key]
@@ -27,12 +27,36 @@ func (pb *PhoneBook) GetContactList() []Contact {
 	return list
 }
 func (pb *PhoneBook) AddContact(c Contact) {
-	(*pb)[strconv.Itoa(ai)] = c
-	ai++
+	(*pb)[strconv.Itoa(AI)] = c
+	AI++
 }
 func (pb *PhoneBook) DeleteContact(key string) {
 	delete((*pb), key)
 }
 func (pb *PhoneBook) UpdateContact(key string, c Contact) {
 	(*pb)[key] = c
+}
+
+func (pb *PhoneBook) CountContacts() string {
+	s := len(*pb)
+	return strconv.Itoa(s)
+} // метод возвращяет количества в репозитории
+
+func (pb *PhoneBook) CheckName(key string) bool {
+
+	for _, item := range *pb {
+		if item.Name == key {
+			return true
+		}
+	}
+	return false
+}
+
+func (pb *PhoneBook) CheckPhone(key string) bool {
+	for _, item := range *pb {
+		if item.Phone == key {
+			return true
+		}
+	}
+	return false
 }

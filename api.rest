@@ -12,8 +12,28 @@ POST http://localhost:8081/user/
 Content-Type: application/json
 
 {
-  "name": "Vasya222222",
-  "phone": "123456722222"
+  "name": "wfetgryh",
+  "phone": "0987654321"
+}
+
+###
+
+POST http://localhost:8081/user/
+Content-Type: application/json
+
+{
+  "name": "Vasya",
+  "phone": "1234567890"
+}
+
+###
+
+POST http://localhost:8081/user/
+Content-Type: application/json
+
+{
+  "name": "Vasya",
+  "phone": "sbethtrj"
 }
 
 ###
